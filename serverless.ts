@@ -3,7 +3,6 @@ import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
   service: 'exportfinances',
-  useDotenv: true,
   frameworkVersion: '3',
   plugins: ['serverless-esbuild', 'serverless-dynamodb-local', 'serverless-offline' ],
   provider: {
@@ -48,6 +47,7 @@ const serverlessConfiguration: AWS = {
     }
    },
   package: { individually: false },
+  useDotenv: true,
   custom: {
     esbuild: {
       bundle: true,
