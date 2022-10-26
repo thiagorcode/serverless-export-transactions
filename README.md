@@ -64,7 +64,7 @@ Caso não tenha o serverless instalado no seu computador e deseje executar na su
 
 ## Documentação da API
 
-#### Retorna todos os itens
+#### Envia dados para converter para Excel
 
 ```http
   POST /dev/exprt
