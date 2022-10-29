@@ -1,6 +1,5 @@
 import { UploadS3 } from './../shared/uploadS3.service';
 import { APIGatewayProxyHandler } from "aws-lambda";
-import { document } from "src/shared/dynamodbClient";
 import { convertObjectInExcel } from "src/utils/convertObjectInExcel";
 import { UserFilesExportService } from 'src/modules/user-files-export/user-files-export.service';
 
@@ -16,7 +15,7 @@ interface EventBody {
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   const { transactions, userId } = JSON.parse(event.body) as EventBody;
-
+  //TODO: Verify transactions length
   const transactionsExcel = convertObjectInExcel(transactions)
   
   const uploadS3 = new UploadS3()
