@@ -33,14 +33,18 @@ const serverlessConfiguration: AWS = {
   
   // import the function via paths
   functions: { 
-    exportTransactions: {
+    auth: {
+      handler: 'src/functions/verifyToken.handler',
+    },
+    export: {
       handler: "src/functions/exportTransactions.handler",
       events: [
         {
           http: {
             path: 'export',
             method: 'post',
-            cors: true
+            cors: true,
+            authorizer: 'auth'
           }
         }
       ]

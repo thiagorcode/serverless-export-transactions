@@ -17,6 +17,7 @@
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
     "date-fns": "^2.29.3",
+    "jsonwebtoken": "^8.5.1",
     "uuid": "^9.0.0",
     "xlsx": "^0.18.5"
   },
