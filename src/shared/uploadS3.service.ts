@@ -15,7 +15,7 @@ export class UploadS3 {
 
     await this.s3.putObject({
       Bucket: process.env.AWS_BUCKET_NAME,
-      Key: `export/${key}`,
+      Key: `${process.env.ENVIRONMENT}/export/${key}`,
       ACL: 'public-read',
       Body:  file,
       ContentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
